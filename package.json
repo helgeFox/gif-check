@@ -1,8 +1,11 @@
 {
   "name": "@foxpublish/gif-check",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a small command line script for finding the type of an image file",
   "main": "main.js",
+  "bin": {
+    "gif-check": "bin.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
