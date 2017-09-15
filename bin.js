@@ -11,11 +11,18 @@ program
   .version('1.0.0')
   .arguments('<file>')
   .action(function (file) {
-  	imageFile = file;
+    imageFile = file;
   })
   .parse(process.argv);
 
-result = check(imageFile).ext.toUpperCase();
-console.log(`
-  ${chalk.bold('type:')} ${result}
-`);
+result = check(imageFile);
+if (result && result.ext) {
+  console.log(`
+    ${chalk.bold('type:')} ${result.ext.toUpperCase()}
+  `);
+}
+else {
+  console.log(`
+    ${chalk.yellow('The file is probably not an image... Could not determine image type!')}
+  `);
+}
